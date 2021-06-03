@@ -128,5 +128,87 @@ Stage7 = PythonOperator(
 
 
 Stage1 >> Stage2
+# Stage2.set_downstream(Stage1)
+# Stage1.set_upstream(Stage2)
+
+# Stage1 << Stage2
+# Stage1.set_downstream(Stage2)
+# Stage2.set_upstream(Stage1)
 ```
+
+```bash
+python3 HelloWorld.py
+```
+
+```bash
+airflow list_dags
+```
+
+```bash
+airflow list_dags Hello --tree
+```
+
+```bash
+airflow test Hello Hello 2021
+```
+
+```bash
+airflow test Hello World 2021
+```
+
+```bash
+airflow backfill Hello -s 2021-01-01 -e 2021-01-02
+```
+
+In other terminal:
+
+```bash
+airflow webserver
+```
+
+Open your browser at:
+http://localhost:8080
+
+Browse > DAG runs
+
+<img width="1275" alt="Screen Shot 2021-06-03 at 2 21 18" src="https://user-images.githubusercontent.com/51218415/120604172-63ef1380-c412-11eb-9069-d1a6bfab8312.png">
+
+# AirFlow UI
+
+```bash
+airflow webserver -p 8080
+```
+
+**Restart**
+
+```bash
+lsof -i tcp:8080
+```
+
+```bash
+kill <YOUR_PID>
+```
+
+```bash
+airflow webserver
+```
+
+<img width="1410" alt="Screen Shot 2021-06-03 at 2 33 19" src="https://user-images.githubusercontent.com/51218415/120606408-c812d700-c414-11eb-940e-124d778f46cc.png">
+<img width="1408" alt="Screen Shot 2021-06-03 at 2 33 30" src="https://user-images.githubusercontent.com/51218415/120606420-cba65e00-c414-11eb-93ed-08b9a6b1b1ea.png">
+<img width="1409" alt="Screen Shot 2021-06-03 at 2 33 38" src="https://user-images.githubusercontent.com/51218415/120606423-cc3ef480-c414-11eb-8f3f-39ae85b24a09.png">
+<img width="1409" alt="Screen Shot 2021-06-03 at 2 33 43" src="https://user-images.githubusercontent.com/51218415/120606429-ccd78b00-c414-11eb-9ba4-dd5b6d139ecc.png">
+<img width="1410" alt="Screen Shot 2021-06-03 at 2 33 51" src="https://user-images.githubusercontent.com/51218415/120606432-cd702180-c414-11eb-80e5-6d7de86103a0.png">
+<img width="1410" alt="Screen Shot 2021-06-03 at 2 34 14" src="https://user-images.githubusercontent.com/51218415/120606433-ce08b800-c414-11eb-894c-c44d94bc1448.png">
+<img width="1386" alt="Screen Shot 2021-06-03 at 2 34 34" src="https://user-images.githubusercontent.com/51218415/120606435-ce08b800-c414-11eb-9123-4d5939da6067.png">
+<img width="1403" alt="Screen Shot 2021-06-03 at 2 34 45" src="https://user-images.githubusercontent.com/51218415/120606439-cea14e80-c414-11eb-9181-4eb80978668c.png">
+<img width="1404" alt="Screen Shot 2021-06-03 at 2 35 37" src="https://user-images.githubusercontent.com/51218415/120606440-cea14e80-c414-11eb-8aaa-3b2d444a4251.png">
+<img width="1402" alt="Screen Shot 2021-06-03 at 2 36 12" src="https://user-images.githubusercontent.com/51218415/120606441-cea14e80-c414-11eb-8a88-6dfbdaa6c0e6.png">
+<img width="1395" alt="Screen Shot 2021-06-03 at 2 36 35" src="https://user-images.githubusercontent.com/51218415/120606446-cf39e500-c414-11eb-8c9e-229f0d6705e2.png">
+<img width="1409" alt="Screen Shot 2021-06-03 at 2 36 58" src="https://user-images.githubusercontent.com/51218415/120606447-cfd27b80-c414-11eb-990b-2f54a9a2262b.png">
+<img width="1396" alt="Screen Shot 2021-06-03 at 2 37 05" src="https://user-images.githubusercontent.com/51218415/120606450-cfd27b80-c414-11eb-9391-c07b7d59f1d7.png">
+<img width="1397" alt="Screen Shot 2021-06-03 at 2 37 12" src="https://user-images.githubusercontent.com/51218415/120606452-d06b1200-c414-11eb-91a8-9644c2f79c28.png">
+
+
+
+
 
